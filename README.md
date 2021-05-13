@@ -1,0 +1,1 @@
+# Webaverse NFT Templates
