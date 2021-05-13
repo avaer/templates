@@ -1,6 +1,6 @@
 {
   "templates": [
-    "react-three-fiber/index.rtfjs",
-    "chest/index.rtfjs"
+    "react-three-fiber",
+    "chest"
   ]
 }
