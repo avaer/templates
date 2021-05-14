@@ -67,7 +67,8 @@ const Floor = () => {
 };
 
 const lightQuaternion = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, -1), new THREE.Vector3(-1, -1, -1).normalize()).toArray();
-const render = () => {
+const render = ({useApp}) => {
+  const app = useApp();
   // console.log('render', r, React, r === React);
   return (
     <Fragment>
