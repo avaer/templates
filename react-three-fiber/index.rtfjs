@@ -2,8 +2,6 @@ import * as THREE from 'three';
 import React, {Fragment, useState, useRef} from 'react';
 import ReactThreeFiber from '@react-three/fiber';
 const {Canvas, useFrame, useThree} = ReactThreeFiber;
-import {physics} from 'webaverse';
-const PhysicsBox = physics.Box;
 
 function Box(props) {
   // This reference will give us direct access to the THREE.Mesh object
@@ -47,10 +45,13 @@ function Box(props) {
   return <perspectiveCamera ref={ref} {...props} />
 } */
 
-const Floor = () => {
+const Floor = ({app}) => {
   const h = 0.1;
   const position = [0, -h/2, 0];
   const scale = [10, h, 10];
+  
+  const PhysicsBox = app.physics.Box;
+  
   return (
     <Fragment>
       <Box
@@ -67,14 +68,16 @@ const Floor = () => {
 };
 
 const lightQuaternion = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, -1), new THREE.Vector3(-1, -1, -1).normalize()).toArray();
-const render = () => {
+const render = ({app}) => {
   // console.log('render', r, React, r === React);
   return (
     <Fragment>
       {/* <ambientLight /> */}
       <directionalLight position={[10, 10, 10]} quaternion={lightQuaternion} />
       <Box position={[0, 1, 0]} color="hotpink" animate />
-      <Floor />
+      <Floor
+        app={app}
+      />
     </Fragment>
   );
 };
