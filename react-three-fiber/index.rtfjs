@@ -61,7 +61,7 @@ const Floor = ({app}) => {
       />
       <PhysicsBox
         position={position}
-        scale={scale}
+        scale={scale.map(n => n * 1.05)}
       />
     </Fragment>
   );
