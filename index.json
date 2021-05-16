@@ -1,6 +1,7 @@
 {
   "templates": [
     "react-three-fiber",
+    "silk",
     "chest",
     "lightsaber",
     "hookshot"
