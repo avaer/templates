@@ -75,9 +75,9 @@ const render = ({app}) => {
       {/* <ambientLight /> */}
       <directionalLight position={[10, 10, 10]} quaternion={lightQuaternion} />
       <Box position={[0, 1, 0]} color="hotpink" animate />
-      <Floor
+		  {/* <Floor
         app={app}
-      />
+      /> */}
     </Fragment>
   );
 };
